@@ -24,6 +24,7 @@
 		0BCC9F8A18A822D500ED4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6518A822D500ED4921 /* UIKit.framework */; };
 		0BCC9F9218A822D500ED4921 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F9018A822D500ED4921 /* InfoPlist.strings */; };
 		0BCC9F9418A822D500ED4921 /* RocketDudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC9F9318A822D500ED4921 /* RocketDudeTests.m */; };
+		0BCC9F9E18A8281500ED4921 /* doodle100.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F9D18A8281500ED4921 /* doodle100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		0BCC9F8F18A822D500ED4921 /* RocketDudeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RocketDudeTests-Info.plist"; sourceTree = "<group>"; };
 		0BCC9F9118A822D500ED4921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0BCC9F9318A822D500ED4921 /* RocketDudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RocketDudeTests.m; sourceTree = "<group>"; };
+		0BCC9F9D18A8281500ED4921 /* doodle100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doodle100.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				0BCC9F7918A822D500ED4921 /* ViewController.m */,
 				0BCC9F7B18A822D500ED4921 /* MyScene.h */,
 				0BCC9F7C18A822D500ED4921 /* MyScene.m */,
+				0BCC9F9D18A8281500ED4921 /* doodle100.png */,
 				0BCC9F7E18A822D500ED4921 /* Spaceship.png */,
 				0BCC9F8018A822D500ED4921 /* Images.xcassets */,
 				0BCC9F6A18A822D500ED4921 /* Supporting Files */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCC9F6E18A822D500ED4921 /* InfoPlist.strings in Resources */,
+				0BCC9F9E18A8281500ED4921 /* doodle100.png in Resources */,
 				0BCC9F8118A822D500ED4921 /* Images.xcassets in Resources */,
 				0BCC9F7F18A822D500ED4921 /* Spaceship.png in Resources */,
 				0BCC9F7718A822D500ED4921 /* Main.storyboard in Resources */,

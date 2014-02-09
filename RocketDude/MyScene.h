@@ -8,6 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MyScene : SKScene
+@interface MyScene : SKScene{
+    double currentVelocity;
+
+    SKSpriteNode *sprite;
+    BOOL onscreen;
+}
 
 @end

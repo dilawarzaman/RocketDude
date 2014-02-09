@@ -14,16 +14,19 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor whiteColor];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        sprite = [SKSpriteNode spriteNodeWithImageNamed:@"doodle100"];
+        sprite.xScale=.5;
+        sprite.yScale=.5;
+        sprite.position = CGPointMake(30, size.height/2);
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
         
-        [self addChild:myLabel];
+        [self addChild:sprite];
+
+        onscreen=NO;
+        
+        
     }
     return self;
 }
@@ -32,22 +35,25 @@
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+        //CGPoint location = [touch locationInNode:self];
+
+        }
+    onscreen=YES;
+}
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    onscreen=NO;
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    if (onscreen) {
+        sprite.position=CGPointMake(sprite.position.x, sprite.position.y+2);
+
+    }
+    else{
+        sprite.position=CGPointMake(sprite.position.x, sprite.position.y-2);
+    }
+
 }
 
 @end
