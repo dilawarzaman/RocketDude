@@ -9,10 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface MyScene : SKScene{
-    double currentVelocity;
 
     SKSpriteNode *sprite;
-    BOOL onscreen;
+    BOOL touchonscreen;
 }
 
 @end

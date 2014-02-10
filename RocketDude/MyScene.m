@@ -20,15 +20,25 @@
         sprite.xScale=.5;
         sprite.yScale=.5;
         sprite.position = CGPointMake(30, size.height/2);
-        
+        sprite.name=@"dude";
         
         [self addChild:sprite];
 
-        onscreen=NO;
+        touchonscreen=NO;
         
+        [self addPillar];
         
     }
     return self;
+}
+-(void)addPillar{
+    SKSpriteNode *pillar = [SKSpriteNode spriteNodeWithImageNamed:@"rectangle32"];
+    pillar.anchorPoint=CGPointMake(0, 0);
+    pillar.xScale=5;
+    
+    pillar.position=CGPointMake(self.size.width, 195);
+    [self addChild:pillar];
+
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -38,22 +48,31 @@
         //CGPoint location = [touch locationInNode:self];
 
         }
-    onscreen=YES;
+    touchonscreen=YES;
 }
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    onscreen=NO;
+    touchonscreen=NO;
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    if (onscreen) {
+    if (touchonscreen) {
         sprite.position=CGPointMake(sprite.position.x, sprite.position.y+2);
 
     }
     else{
         sprite.position=CGPointMake(sprite.position.x, sprite.position.y-2);
     }
-
+    for (SKNode *child in self.children) {
+        if (child.position.x<-400) {
+            [child removeFromParent];
+        }
+        if (![child.name isEqual:@"dude"]) {
+            child.position=CGPointMake(child.position.x-2, child.position.y);
+            
+        }
+        
+    }
 }
 
 @end

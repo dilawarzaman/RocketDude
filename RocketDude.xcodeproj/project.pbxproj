@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BC1FB3718A8626B0060F99B /* rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1FB3618A8626B0060F99B /* rectangle.png */; };
+		0BC1FB3918A863F60060F99B /* rectangle32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1FB3818A863F60060F99B /* rectangle32.png */; };
 		0BCC9F6218A822D500ED4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6118A822D500ED4921 /* Foundation.framework */; };
 		0BCC9F6418A822D500ED4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6318A822D500ED4921 /* CoreGraphics.framework */; };
 		0BCC9F6618A822D500ED4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6518A822D500ED4921 /* UIKit.framework */; };
@@ -17,7 +19,6 @@
 		0BCC9F7718A822D500ED4921 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F7518A822D500ED4921 /* Main.storyboard */; };
 		0BCC9F7A18A822D500ED4921 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC9F7918A822D500ED4921 /* ViewController.m */; };
 		0BCC9F7D18A822D500ED4921 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC9F7C18A822D500ED4921 /* MyScene.m */; };
-		0BCC9F7F18A822D500ED4921 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F7E18A822D500ED4921 /* Spaceship.png */; };
 		0BCC9F8118A822D500ED4921 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F8018A822D500ED4921 /* Images.xcassets */; };
 		0BCC9F8818A822D500ED4921 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F8718A822D500ED4921 /* XCTest.framework */; };
 		0BCC9F8918A822D500ED4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6118A822D500ED4921 /* Foundation.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BC1FB3618A8626B0060F99B /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle.png; sourceTree = "<group>"; };
+		0BC1FB3818A863F60060F99B /* rectangle32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle32.png; sourceTree = "<group>"; };
 		0BCC9F5E18A822D500ED4921 /* RocketDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCC9F6118A822D500ED4921 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BCC9F6318A822D500ED4921 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,7 +57,6 @@
 		0BCC9F7918A822D500ED4921 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0BCC9F7B18A822D500ED4921 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		0BCC9F7C18A822D500ED4921 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		0BCC9F7E18A822D500ED4921 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		0BCC9F8018A822D500ED4921 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0BCC9F8618A822D500ED4921 /* RocketDudeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketDudeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCC9F8718A822D500ED4921 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,7 +133,8 @@
 				0BCC9F7B18A822D500ED4921 /* MyScene.h */,
 				0BCC9F7C18A822D500ED4921 /* MyScene.m */,
 				0BCC9F9D18A8281500ED4921 /* doodle100.png */,
-				0BCC9F7E18A822D500ED4921 /* Spaceship.png */,
+				0BC1FB3618A8626B0060F99B /* rectangle.png */,
+				0BC1FB3818A863F60060F99B /* rectangle32.png */,
 				0BCC9F8018A822D500ED4921 /* Images.xcassets */,
 				0BCC9F6A18A822D500ED4921 /* Supporting Files */,
 			);
@@ -244,9 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCC9F6E18A822D500ED4921 /* InfoPlist.strings in Resources */,
+				0BC1FB3718A8626B0060F99B /* rectangle.png in Resources */,
 				0BCC9F9E18A8281500ED4921 /* doodle100.png in Resources */,
 				0BCC9F8118A822D500ED4921 /* Images.xcassets in Resources */,
-				0BCC9F7F18A822D500ED4921 /* Spaceship.png in Resources */,
+				0BC1FB3918A863F60060F99B /* rectangle32.png in Resources */,
 				0BCC9F7718A822D500ED4921 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +484,7 @@
 				0BCC9F9918A822D500ED4921 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0BCC9F9A18A822D500ED4921 /* Build configuration list for PBXNativeTarget "RocketDudeTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +493,7 @@
 				0BCC9F9C18A822D500ED4921 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
