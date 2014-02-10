@@ -9,15 +9,14 @@
 #import "MyScene.h"
 
 @implementation MyScene
+@synthesize genTimer;
+@synthesize scoreTimer;
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
-        
         height = [[UIScreen mainScreen] bounds].size.width;
-        
         width = [[UIScreen mainScreen] bounds].size.height;
-
         self.backgroundColor = [SKColor whiteColor];
         
         sprite = [SKSpriteNode spriteNodeWithImageNamed:@"doodle100"];
@@ -28,25 +27,41 @@
         [self addChild:sprite];
 
         touchonscreen=NO;
+        
         [self addPillar];
+        
+        genTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(addPillar) userInfo:nil repeats:YES];
+        
+        scoreTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateScore) userInfo:nil repeats:YES];
+        score=0;
+        
+        scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        scoreLabel.text=@"0";
+        scoreLabel.fontSize=30;
+        scoreLabel.fontColor=[SKColor blackColor];
+        scoreLabel.position=CGPointMake(70, 250);
+        [self addChild:scoreLabel];
 
     }
     return self;
 }
-- (void)didMoveToView:(SKView *)view
-{
-    }
+-(void)updateScore{
+    score+=1;
+    scoreLabel.text=[NSString stringWithFormat:@"%i",score];
+
+}
+
 
 -(void)addPillar{
-    int x = arc4random_uniform(8)+1;
-   double val = ((double)arc4random() / 2);
+    int x = arc4random_uniform(8)+2;
+    int y = arc4random_uniform(3)+1;
 
 
     SKSpriteNode *pillar = [SKSpriteNode spriteNodeWithImageNamed:@"rectangle32"];
     pillar.name=@"pillar";
     pillar.anchorPoint=CGPointMake(0, 0);
     pillar.xScale=x;
-    //pillar.yScale=val;
+    pillar.yScale=y;
 
     pillar.position=CGPointMake(self.size.width+3, 0);
     
@@ -79,26 +94,26 @@
         sprite.position=CGPointMake(sprite.position.x, sprite.position.y-2);
     }
     for (SKNode *child in self.children) {
-        if (child.position.x<-child.frame.size.width) {
+            if (child.position.x<-child.frame.size.width) {
             [child removeFromParent];
-            [self addPillar];
+            //[self addPillar];
         }
-        if (![child.name isEqual:@"dude"]) {
+        if ([child.name isEqual:@"pillar"]) {
             child.position=CGPointMake(child.position.x-2, child.position.y);
             if ([child intersectsNode:sprite]) {
-                NSLog(@"collision:%f",sprite.position.y+sprite.frame.size.height/2);
+               //NSLog(@"collision:%f",sprite.position.y+sprite.frame.size.height/2);
                 if (sprite.position.y+sprite.frame.size.height/2>=child.frame.size.height+sprite.frame.size.height/2) {
                     sprite.position=CGPointMake(sprite.position.x, child.frame.size.height+sprite.frame.size.height/2);
                 }
                 else{
-                    NSLog(@"game over");
                     [self endgame];
             
                 }
             }
-
+        
             
         }
+        
         
     }
     

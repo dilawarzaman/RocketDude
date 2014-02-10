@@ -12,9 +12,17 @@
 
     SKSpriteNode *sprite;
     BOOL touchonscreen;
+    NSTimer *genTimer;
+    
+    NSTimer *scoreTimer;
+    int score;
+    SKLabelNode *scoreLabel;
     
     float height;
     float width;
+    
 }
+@property (nonatomic, retain) NSTimer *genTimer;
+@property (nonatomic, retain) NSTimer *scoreTimer;
 
 @end
