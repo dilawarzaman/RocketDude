@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0BC1FB3718A8626B0060F99B /* rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1FB3618A8626B0060F99B /* rectangle.png */; };
 		0BC1FB3918A863F60060F99B /* rectangle32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1FB3818A863F60060F99B /* rectangle32.png */; };
+		0BC1FB3B18A87D6A0060F99B /* edge.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BC1FB3A18A87D6A0060F99B /* edge.png */; };
 		0BCC9F6218A822D500ED4921 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6118A822D500ED4921 /* Foundation.framework */; };
 		0BCC9F6418A822D500ED4921 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6318A822D500ED4921 /* CoreGraphics.framework */; };
 		0BCC9F6618A822D500ED4921 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCC9F6518A822D500ED4921 /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		0BC1FB3618A8626B0060F99B /* rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle.png; sourceTree = "<group>"; };
 		0BC1FB3818A863F60060F99B /* rectangle32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectangle32.png; sourceTree = "<group>"; };
+		0BC1FB3A18A87D6A0060F99B /* edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edge.png; sourceTree = "<group>"; };
 		0BCC9F5E18A822D500ED4921 /* RocketDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocketDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCC9F6118A822D500ED4921 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0BCC9F6318A822D500ED4921 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 				0BCC9F9D18A8281500ED4921 /* doodle100.png */,
 				0BC1FB3618A8626B0060F99B /* rectangle.png */,
 				0BC1FB3818A863F60060F99B /* rectangle32.png */,
+				0BC1FB3A18A87D6A0060F99B /* edge.png */,
 				0BCC9F8018A822D500ED4921 /* Images.xcassets */,
 				0BCC9F6A18A822D500ED4921 /* Supporting Files */,
 			);
@@ -251,6 +254,7 @@
 				0BCC9F9E18A8281500ED4921 /* doodle100.png in Resources */,
 				0BCC9F8118A822D500ED4921 /* Images.xcassets in Resources */,
 				0BC1FB3918A863F60060F99B /* rectangle32.png in Resources */,
+				0BC1FB3B18A87D6A0060F99B /* edge.png in Resources */,
 				0BCC9F7718A822D500ED4921 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
