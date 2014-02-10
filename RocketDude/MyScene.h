@@ -13,6 +13,8 @@
     SKSpriteNode *sprite;
     BOOL touchonscreen;
     
+    float height;
+    float width;
 }
 
 @end

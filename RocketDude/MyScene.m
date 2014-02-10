@@ -14,19 +14,22 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
+        height = [[UIScreen mainScreen] bounds].size.width;
         
+        width = [[UIScreen mainScreen] bounds].size.height;
+
         self.backgroundColor = [SKColor whiteColor];
         
         sprite = [SKSpriteNode spriteNodeWithImageNamed:@"doodle100"];
         sprite.xScale=.5;
         sprite.yScale=.5;
-        sprite.position = CGPointMake(30, size.height/2);
+        sprite.position = CGPointMake(30, height/2);
         sprite.name=@"dude";
         [self addChild:sprite];
 
         touchonscreen=NO;
         [self addPillar];
-        
+
     }
     return self;
 }
@@ -45,13 +48,9 @@
     pillar.xScale=x;
     //pillar.yScale=val;
 
-    pillar.position=CGPointMake(self.size.width+5, 193);
+    pillar.position=CGPointMake(self.size.width+3, 0);
     
-    SKSpriteNode *edge = [SKSpriteNode spriteNodeWithImageNamed:@"edge"];
-    edge.name=@"edge";
-    edge.anchorPoint=CGPointMake(0, 0);
-    edge.position=CGPointMake(self.size.width+5, 193);
-
+    
 
     [self addChild:pillar];
 
@@ -88,8 +87,8 @@
             child.position=CGPointMake(child.position.x-2, child.position.y);
             if ([child intersectsNode:sprite]) {
                 NSLog(@"collision:%f",sprite.position.y+sprite.frame.size.height/2);
-                if (sprite.position.y+sprite.frame.size.height/2>=child.frame.size.height+sprite.frame.size.height/2+193) {
-                    sprite.position=CGPointMake(sprite.position.x, child.frame.size.height+sprite.frame.size.height/2+193);
+                if (sprite.position.y+sprite.frame.size.height/2>=child.frame.size.height+sprite.frame.size.height/2) {
+                    sprite.position=CGPointMake(sprite.position.x, child.frame.size.height+sprite.frame.size.height/2);
                 }
                 else{
                     NSLog(@"game over");
