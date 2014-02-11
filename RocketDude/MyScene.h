@@ -7,7 +7,6 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-
 @interface MyScene : SKScene{
 
     SKSpriteNode *sprite;
@@ -21,6 +20,9 @@
     float height;
     float width;
     
+    SKShapeNode *green;
+    double batterylife;
+    BOOL onPlatform;
 }
 @property (nonatomic, retain) NSTimer *genTimer;
 @property (nonatomic, retain) NSTimer *scoreTimer;

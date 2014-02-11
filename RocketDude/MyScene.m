@@ -42,12 +42,58 @@
         scoreLabel.position=CGPointMake(70, 250);
         [self addChild:scoreLabel];
 
+        SKShapeNode *red = [SKShapeNode node];
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathMoveToPoint(path, NULL, 1, height-1);
+        CGPathAddLineToPoint(path, NULL, 1, height-30.0);
+        CGPathAddLineToPoint(path, NULL, width-1, height-30.0);
+        CGPathAddLineToPoint(path, NULL, width-1, height-1);
+        CGPathAddLineToPoint(path, NULL, 1, height-1);
+        red.path = path;
+        [red setStrokeColor:[UIColor blackColor]];
+        red.fillColor=[SKColor redColor];
+        CGPathRelease(path);
+        [self addChild:red];
+    
+        green = [SKShapeNode node];
+        CGMutablePathRef battery = CGPathCreateMutable();
+        CGPathMoveToPoint(battery, NULL, 1, height-1);
+        CGPathAddLineToPoint(battery, NULL, 1, height-30.0);
+        CGPathAddLineToPoint(battery, NULL, width-1, height-30.0);
+        CGPathAddLineToPoint(battery, NULL, width-1, height-1);
+        CGPathAddLineToPoint(battery, NULL, 1, height-1);
+        green.path = battery;
+        [green setStrokeColor:[UIColor blackColor]];
+        green.fillColor=[SKColor greenColor];
+        //CGPathRelease(battery);
+        [self addChild:green];
+        batterylife=1;
+        
+        onPlatform=NO;
     }
     return self;
 }
+
+
+
 -(void)updateScore{
     score+=1;
     scoreLabel.text=[NSString stringWithFormat:@"%i",score];
+    
+    if (onPlatform)
+            batterylife+=.1;
+    
+    else if(!onPlatform)
+            batterylife-=.05;
+    
+    if (batterylife>1) {
+        batterylife=1;
+    }
+    green.xScale=batterylife;
+    
+    if(batterylife<0){
+        [self endgame];
+    }
 
 }
 
@@ -86,7 +132,9 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    if (touchonscreen) {
+    onPlatform=NO;
+
+           if (touchonscreen) {
         sprite.position=CGPointMake(sprite.position.x, sprite.position.y+2);
 
     }
@@ -103,7 +151,8 @@
             if ([child intersectsNode:sprite]) {
                //NSLog(@"collision:%f",sprite.position.y+sprite.frame.size.height/2);
                 if (sprite.position.y+sprite.frame.size.height/2>=child.frame.size.height+sprite.frame.size.height/2) {
-                    sprite.position=CGPointMake(sprite.position.x, child.frame.size.height+sprite.frame.size.height/2);
+                   sprite.position=CGPointMake(sprite.position.x, child.frame.size.height+sprite.frame.size.height/2);
+                    onPlatform=YES;
                 }
                 else{
                     [self endgame];
@@ -120,9 +169,12 @@
 }
 -(void)endgame{
     self.view.paused=YES;
+    [genTimer invalidate];
+    [scoreTimer invalidate];
     UILabel *GameOver=[[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.height/2, self.view.frame.size.width/2, 150, 20)];
     GameOver.text=@"Game Over";
     [GameOver setTextColor:[UIColor blackColor]];
     [self.view addSubview:GameOver];
+    
 }
 @end
