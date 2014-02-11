@@ -81,10 +81,10 @@
     scoreLabel.text=[NSString stringWithFormat:@"%i",score];
     
     if (onPlatform)
-            batterylife+=.1;
+            batterylife+=.2;
     
     else if(!onPlatform)
-            batterylife-=.05;
+            batterylife-=.2;
     
     if (batterylife>1) {
         batterylife=1;
@@ -103,7 +103,7 @@
     int y = arc4random_uniform(3)+1;
 
 
-    SKSpriteNode *pillar = [SKSpriteNode spriteNodeWithImageNamed:@"rectangle32"];
+    SKSpriteNode *pillar = [SKSpriteNode spriteNodeWithImageNamed:@"black"];
     pillar.name=@"pillar";
     pillar.anchorPoint=CGPointMake(0, 0);
     pillar.xScale=x;
@@ -135,19 +135,21 @@
     onPlatform=NO;
 
            if (touchonscreen) {
-        sprite.position=CGPointMake(sprite.position.x, sprite.position.y+2);
+        sprite.position=CGPointMake(sprite.position.x, sprite.position.y+5);
 
     }
     else{
-        sprite.position=CGPointMake(sprite.position.x, sprite.position.y-2);
+        sprite.position=CGPointMake(sprite.position.x, sprite.position.y-7);
     }
+
     for (SKNode *child in self.children) {
-            if (child.position.x<-child.frame.size.width) {
+        if (child.position.x<-child.frame.size.width) {
             [child removeFromParent];
             //[self addPillar];
         }
-        if ([child.name isEqual:@"pillar"]) {
-            child.position=CGPointMake(child.position.x-2, child.position.y);
+        if ([[child.name substringToIndex:4] isEqual:@"pill"]) {
+            
+            child.position=CGPointMake(child.position.x-5, child.position.y);
             if ([child intersectsNode:sprite]) {
                //NSLog(@"collision:%f",sprite.position.y+sprite.frame.size.height/2);
                 if (sprite.position.y+sprite.frame.size.height/2>=child.frame.size.height+sprite.frame.size.height/2) {

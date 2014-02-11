@@ -28,6 +28,7 @@
 		0BCC9F9218A822D500ED4921 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F9018A822D500ED4921 /* InfoPlist.strings */; };
 		0BCC9F9418A822D500ED4921 /* RocketDudeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCC9F9318A822D500ED4921 /* RocketDudeTests.m */; };
 		0BCC9F9E18A8281500ED4921 /* doodle100.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BCC9F9D18A8281500ED4921 /* doodle100.png */; };
+		0BDEFC6A18AABD7B003DB1C3 /* black.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BDEFC6918AABD7B003DB1C3 /* black.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		0BCC9F9118A822D500ED4921 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0BCC9F9318A822D500ED4921 /* RocketDudeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RocketDudeTests.m; sourceTree = "<group>"; };
 		0BCC9F9D18A8281500ED4921 /* doodle100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doodle100.png; sourceTree = "<group>"; };
+		0BDEFC6918AABD7B003DB1C3 /* black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				0BCC9F9D18A8281500ED4921 /* doodle100.png */,
 				0BC1FB3618A8626B0060F99B /* rectangle.png */,
 				0BC1FB3818A863F60060F99B /* rectangle32.png */,
+				0BDEFC6918AABD7B003DB1C3 /* black.png */,
 				0BC1FB3A18A87D6A0060F99B /* edge.png */,
 				0BCC9F8018A822D500ED4921 /* Images.xcassets */,
 				0BCC9F6A18A822D500ED4921 /* Supporting Files */,
@@ -254,6 +257,7 @@
 			files = (
 				0BCC9F6E18A822D500ED4921 /* InfoPlist.strings in Resources */,
 				0BC1FB3718A8626B0060F99B /* rectangle.png in Resources */,
+				0BDEFC6A18AABD7B003DB1C3 /* black.png in Resources */,
 				0BC1FB3D18A8B0BC0060F99B /* README.rtf in Resources */,
 				0BCC9F9E18A8281500ED4921 /* doodle100.png in Resources */,
 				0BCC9F8118A822D500ED4921 /* Images.xcassets in Resources */,
