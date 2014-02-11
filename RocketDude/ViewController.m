@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "Menu.h"
 
 @implementation ViewController
 
@@ -21,7 +21,7 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    SKScene * scene = [Menu sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeResizeFill;
     
     // Present the scene.

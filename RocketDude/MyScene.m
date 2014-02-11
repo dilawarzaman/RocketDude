@@ -39,7 +39,7 @@
         scoreLabel.text=@"0";
         scoreLabel.fontSize=30;
         scoreLabel.fontColor=[SKColor blackColor];
-        scoreLabel.position=CGPointMake(70, 250);
+        scoreLabel.position=CGPointMake(width-scoreLabel.frame.size.width, height-60);
         [self addChild:scoreLabel];
 
         SKShapeNode *red = [SKShapeNode node];
@@ -100,7 +100,7 @@
 
 -(void)addPillar{
     int x = arc4random_uniform(8)+2;
-    int y = arc4random_uniform(3)+1;
+    int y = arc4random_uniform(2)+2;
 
 
     SKSpriteNode *pillar = [SKSpriteNode spriteNodeWithImageNamed:@"black"];
@@ -131,6 +131,14 @@
 }
 
 -(void)update:(CFTimeInterval)currentTime {
+    
+    if (sprite.position.y+sprite.frame.size.height/2>height-30) {
+        sprite.position=CGPointMake(sprite.position.x, height-sprite.frame.size.height/2-30);
+    }
+    
+    if (sprite.position.y-sprite.frame.size.height/2<0) {
+        [self endgame];
+    }
     /* Called before each frame is rendered */
     onPlatform=NO;
 
